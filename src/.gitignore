@@ -1,15 +1,33 @@
+# node modules
 /node_modules
+
+# compiled files and logs
 /public/hot
 /public/storage
 /storage/*.key
+/storage/framework/*
+/storage/logs/*
+/storage/oauth-private.key
+/storage/oauth-public.key
+
+# except this upload directory (明示的に追跡したい画像ディレクトリ)
+/storage/app/public/*
+!/storage/app/public/products
+!/storage/app/public/products/.gitkeep
+
+# vendor and env
 /vendor
 .env
 .env.backup
 .phpunit.result.cache
+
+# docker
 docker-compose.override.yml
-Homestead.json
-Homestead.yaml
-npm-debug.log
-yarn-error.log
+
+# IDE
 /.idea
 /.vscode
+
+# others
+npm-debug.log
+yarn-error.log

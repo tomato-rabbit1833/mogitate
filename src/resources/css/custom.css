@@ -1,0 +1,39 @@
+body {
+    background-color: #f3f4f6;
+    color: #333;
+    font-size: 16px;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 10px;
+}
+
+.btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.page-item .page-link {
+    font-size: 0.9rem;
+    /* 適度なサイズに調整 */
+    padding: 0.4rem 0.75rem;
+    line-height: 1.25;
+}
+
+.page-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.75rem;
+    line-height: 1.25;
+}
+
+.page-link svg {
+    width: 1em;
+    height: 1em;
+}
