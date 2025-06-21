@@ -1,33 +1,40 @@
-# node modules
+# Node modules
 /node_modules
 
-# compiled files and logs
+# Laravel Mix / Vite
 /public/hot
-/public/storage
-/storage/*.key
-/storage/framework/*
-/storage/logs/*
-/storage/oauth-private.key
-/storage/oauth-public.key
 
-# except this upload directory (明示的に追跡したい画像ディレクトリ)
-/storage/app/public/*
+# Laravel storage（全体を無視）
+/storage/*
+
+# ただし storage/app/public/products は追跡対象にする
+!/storage/app
+!/storage/app/public
 !/storage/app/public/products
 !/storage/app/public/products/.gitkeep
 
-# vendor and env
-/vendor
-.env
-.env.backup
+# 鍵ファイルやキャッシュ
+/storage/*.key
 .phpunit.result.cache
 
-# docker
+# Composer の依存
+/vendor
+
+# 環境設定ファイル
+.env
+.env.backup
+
+# Docker 設定ファイル（ローカル開発用）
 docker-compose.override.yml
 
-# IDE
-/.idea
-/.vscode
+# Homestead 設定
+Homestead.json
+Homestead.yaml
 
-# others
+# npm/yarn ログ
 npm-debug.log
 yarn-error.log
+
+# IDE設定
+/.idea
+/.vscode
