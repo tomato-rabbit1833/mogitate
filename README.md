@@ -25,12 +25,34 @@
 
 セットアップ手順
 ① リポジトリをクローン
+cd coachtech/laravel
+git clone /laravel-docker-template.git
+mv laravel-docker-template
+cd mogitate
+git remote set-url origin 作成したリポジトリのurl
+git remote -v
+git add .
+git commit -m "リモートリポジトリの変更"
+git push origin main
+
 ② Docker の設定
+docker-compose up -d --build
+code . 
+
 ③ Laravel のパッケージのインストール
+docker-compose exec php bash
+composer install
+php artisan key:generate
+php artisan migrate
+php artisan storage:link
+※ 必要なら php artisan db:seed
+
 ④ .env ファイルの作成
+cd src
+cp .env.example .env
 
 アクセスURL（初期状態）
-アプリ: http://localhost
+アプリ: http://localhost:81
 
 phpMyAdmin: http://localhost:8080
 
@@ -47,4 +69,5 @@ phpMyAdmin: http://localhost:8080
 
 Laravelのログやセッションも storage 以下に保存されます
 
-自分の環境だとポート番号が8080だとnginxが起動しないのでポート番号が8180になっています
+自分の環境だとポート番号が8080だとnginxが起動しないのでポート番号が8180になっています。
+なのでローカルホストの後ろは:81をつけてください
